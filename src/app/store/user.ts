@@ -1,4 +1,4 @@
-import { create } from 'zustand'
+import { create } from 'zustand';
 
 type State = {
   isLogin: Boolean
@@ -11,4 +11,4 @@ type Action = {
 export const userStore = create<State & Action>(set => ({
   isLogin: false,
   updataIsLogin: val => set(() => ({ isLogin: val }))
-}))
+}));

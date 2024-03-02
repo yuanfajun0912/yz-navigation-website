@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model navigation {
+  id         Int      @id @default(autoincrement())
+  name       String   @db.VarChar(255)
+  desc       String?  @db.Text
+  address    String   @db.VarChar(255)
+  type       Int
+  extraJson  String?  @db.Text
+  createTime DateTime @default(now()) @db.Timestamp(0)
+  updateTime DateTime @db.Timestamp(0)
+}

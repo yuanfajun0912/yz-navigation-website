@@ -1,9 +1,14 @@
-"use client";
+'use client';
 
-import { userStore } from '@/store/index'
+import { userStore } from '@/app/store/index';
+import client from '@/app/libs/database';
 
 export default function Home() {
-  const isLogin = userStore(state => state.isLogin)
+  const isLogin = userStore(state => state.isLogin);
+
+  // client.navigation.findUnique({
+
+  // })
 
   return (
     <div>
