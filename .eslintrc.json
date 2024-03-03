@@ -4,6 +4,11 @@
     "indent": ["error", 2],
     "object-curly-spacing": ["error", "always"],
     "semi": "error",
-    "quotes": [2, "single", { "avoidEscape": true }]
+    "quotes": [2, "single", { "avoidEscape": true }],
+    // 单标签闭合
+    "react/self-closing-comp": ["error", {
+      "component": true,
+      "html": true
+    }]
   }
 }
